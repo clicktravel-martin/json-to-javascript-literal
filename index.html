@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html data-ng-app="jsonToJSLiteral">
+<head lang="en">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>JSON to JavaScript literal</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bootstrap/3.3.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+</head>
+<body data-ng-cloak data-ng-controller="Main">
+
+<div class="container">
+
+    <div class="page-header">
+        <h1>JSON to JavaScript literal</h1>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+
+            <div class="alert alert-danger" data-ng-show="invalidJson" role="alert">Please <a href="http://jsonlint.com/" class="alert-link">validate</a> your JSON</div>
+            <div class="alert alert-danger" data-ng-show="internalError" role="alert">Something went wrong. Sorry!</div>
+
+            <form role="form">
+                <div class="form-group">
+                    <textarea class="form-control" style="font-family:Monospace; min-height: 500px" id="input-field" data-ng-model="input" placeholder="Paste your JSON here..."></textarea>
+                </div>
+                <button class="btn btn-primary" type="submit" data-ng-click="convert()" data-ng-disabled="!input">Convert</button>
+                <p class="pull-right">
+                    <a href="http://www.clicktravel.com"><img class="logo" title="Click Travel logo" alt="Click Travel logo" src="click-travel-logo-small.png"></a>
+                </p>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+<script src="lodash.min.js"></script>
+<script src="json-to-javascript-literal.js"></script>
+
+</body>
+</html>
