@@ -87,6 +87,7 @@
                 } else if (_.isArray(entity)) {
                     return arrayToLiteral(entity, offset);
                 } else if (_.isString(entity)) {
+                    entity = entity.replace(/'/g, '\\\'');
                     return '\'' + entity + '\'';
                 } else if (_.isNull(entity)) {
                     return 'null'
